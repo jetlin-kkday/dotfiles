@@ -6,7 +6,7 @@ Installation
 -------------
 * git clone git@github.com:bigair/dotfiles.git ~/.vim
 * cd ~/.vim
-* brew install git bash-completion
+* brew install git bash-completion nodejs
 * **sudo** npm -g install instant-markdown-d
 
 Create Symlinks
@@ -16,7 +16,6 @@ Create Symlinks
 
 * **[osx]** ln -s ~/.vim/bash_profile ~/.bash_profile
 * **[linux]** cat ~/.vim/bash_profile >> ~/.bashrc
-* **[macos]** ln -s ~/.vim/bash_completion.d/vimCtags `brew --prefix`/etc/bash_completion/vimctag
 
 **root**
 
