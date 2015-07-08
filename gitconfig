@@ -9,6 +9,7 @@
 [alias]
     view = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %cn %Cgreen(%cr)%Creset'
     df = diff
+    st = status
 [core]
     editor = vim
 	excludesfile = /Users/limit/.gitignore_global

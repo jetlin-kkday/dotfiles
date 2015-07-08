@@ -1,7 +1,7 @@
 export CLICOLOR=1
 # export LSCOLORS=gxfxcxdxcxegedabagacad
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-export PATH="$(brew --prefix homebrew/php/php55)/sbin:$PATH"
+# export PATH="$(brew --prefix homebrew/php/php55)/sbin:$PATH"
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE="true"
 export GIT_PS1_SHOWUNTRACKEDFILES="true"
@@ -14,8 +14,8 @@ PHP_AUTOCONF="/usr/local/bin/autoconf"
 source ~/.git-prompt.sh
 source ~/.bash_aliases
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
+#if [ -f `brew --prefix`/etc/bash_completion ]; then
+#    . `brew --prefix`/etc/bash_completion
+# fi
 
 export PATH=$PATH:~/.composer/vendor/bin

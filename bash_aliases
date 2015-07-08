@@ -14,7 +14,6 @@ alias nginx.logs.default-ssl.access='tail -250f /usr/local/etc/nginx/logs/defaul
 alias nginx.logs.phpmyadmin.error='tail -250f /usr/local/etc/nginx/logs/phpmyadmin.error.log'
 alias nginx.logs.phpmyadmin.access='tail -250f /usr/local/etc/nginx/logs/phpmyadmin.access.log'
 
-alias ls='ls -la'
-alias ls='CLICOLOR_FORCE=1 ls -Gla'
+alias ls='ls -la --color=auto'
 alias grep='grep --color=always'
 alias less='less -R'
