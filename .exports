@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# ----------------------------------------
+# editor
+# ----------------------------------------
+export EDITOR='vim';
+
+# ----------------------------------------
+# highlight matches
+# ----------------------------------------
+export GREP_OPTIONS='--color=auto'
+
+# ----------------------------------------
+# env
+# ----------------------------------------
+# export LANG="zh_TW.UTF-8"
+# export LANG=${LANG/zh_TW/en_US}   # Replace zh_TW with English
+# export LC_ALL="zh_TW.UTF-8"

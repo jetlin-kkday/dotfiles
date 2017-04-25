@@ -7,6 +7,5 @@ set expandtab
 " 顯示游標位置
 set ruler
 
-
 au BufRead,BufNewFile *.json set filetype=json
-au! Syntax json source /Users/limit/.vim/ftplugin/json.vim
+au! Syntax json source ~/.vim/ftplugin/json.vim

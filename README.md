@@ -1,27 +1,49 @@
-Requirements
-------------
-* [Homebrew](http://mxcl.github.com/homebrew/) -- Homebrew
+# bigair's dotfiles
 
-Installation
--------------
-* git clone git@github.com:bigair/dotfiles.git ~/.vim
-* cd ~/.vim
-* brew install git bash-completion nodejs
-* **sudo** npm -g install instant-markdown-d
+## Installation
 
-Create Symlinks
-----------------
-* ln -s ~/.vim/vimrc ~/.vimrc
-* ln -s ~/.vim/gitconfig ~/.gitconfig
+```bash
+git clone https://github.com/bigair/dotfiles.git && cd dotfiles && source bootstrap.sh
+```
 
-* **[osx]** ln -s ~/.vim/bash_profile ~/.bash_profile
-* **[linux]** cat ~/.vim/bash_profile >> ~/.bashrc
+To Update, `cd` into your local `dotfiles` repository and then:
 
-**root**
+```bash
+source bootstrap.sh
+```
 
-* ln -s ~User/.vim .
-* ln -s ~User/.vimrc .
-* ln -s ~User/.bash_profile .profile
+
+### Specify the $PATH
+
+`~/.path`
+
+example: 
+
+```bash
+export PATH="/usr/local/bin:$PATH"
+```
+
+### Add custom commands without creating a new fork
+
+`~/.extra` 
+
+example:
+
+```bash
+GIT_AUTHOR_NAME="limit tsai"
+GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+git config --global user.name "$GIT_AUTHOR_NAME"
+GIT_AUTHOR_EMAIL="limit.tsai@gmail.com"
+GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+git config --global user.email "$GIT_AUTHOR_EMAIL"
+```
+
+### Install Homebrew formulae
+When setting up a new Mac, you may want to install some common [Homebrew](http://brew.sh/) formulae (after installing Homebrew, of course):
+
+```bash
+./brew.sh
+```
 
 Other
 -----

@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+# ----------------------------------------
+# term
+# ----------------------------------------
+if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
+    export TERM='gnome-256color';
+elif infocmp xterm-256color >/dev/null 2>&1; then
+    export TERM='xterm-256color';
+fi;
+
+if tput setaf 1 &> /dev/null; then
+    tput sgr0; # reset colors
+    bold=$(tput bold);
+    reset=$(tput sgr0);
+    red=$(tput setaf 124);
+    orange=$(tput setaf 166);
+
+else
+    bold='';
+    reset="\e[0m";
+    red="\e[1;31m";
+    orange="\e[1;33m";
+fi;
+
+# ----------------------------------------
+# Highlight when logged in as root.
+# ----------------------------------------
+if [[ "${USER}" == "root" ]]; then
+    userStyle="${orange}";
+else
+    userStyle="${red}";
+fi;
+
+
+# ----------------------------------------
+# git prompt
+# ----------------------------------------
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE="true"
+export GIT_PS1_SHOWUNTRACKEDFILES="true"
+
+
+# ----------------------------------------
+# prompt
+# ----------------------------------------
+PS1='\[${bold}\]';
+PS1+='\[${userStyle}\]\u';   # username
+PS1+='\[\033[39m\]@';       # `@`
+PS1+='\[\033[37m\]\H';      # host
+PS1+='\[\033[39m\]: ';      # `: `
+PS1+='\[\033[32m\]\W';      # work directory
+PS1+='\[\033[39m\]$(__git_ps1) ';   # git prompt
+PS1+='\[\033[01;39m\]\$ \[\033[00;39m\] ';  # `$ `
+PS1+='\[${reset}\]';        # (reset color)
+export PS1;
+
+PS2="\[${yellow}\]→ \[${reset}\]";
+export PS2;
+
+source ~/.git-prompt.sh
